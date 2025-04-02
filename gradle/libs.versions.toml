@@ -12,14 +12,14 @@ androidx-espresso-core = "3.6.1"
 androidx-lifecycle = "2.8.4"
 androidx-material = "1.12.0"
 coroutine = "1.9.0"
+androidxComposeBom = "2024.05.00"
 ksp = "1.9.23-1.0.20"
 koin = "4.0.0"
 mockk = "1.13.9"
+lottie = "6.6.4"
 compose-livedata = "1.7.8"
 android-arch-core = "2.2.0"
 lifecycle-runtime = "2.8.7"
-apollo = "4.1.1"
-apollo-mock = "0.0.1"
 navigation = "2.7.0-alpha07"
 material3Android = "1.3.1"
 junitVersion = "4.13.2"
@@ -28,7 +28,7 @@ jetbrainsKotlinJvm = "2.0.21"
 
 [libraries]
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin"}
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
 coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
@@ -37,17 +37,17 @@ compose-graphics = { module = "androidx.compose.ui:ui-graphics" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose-livedata" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 core-common = { module = "androidx.arch.core:core-common", version.ref = "android-arch-core" }
 core-runtime = { module = "androidx.arch.core:core-runtime", version.ref = "android-arch-core" }
 core-testing = { module = "androidx.arch.core:core-testing", version.ref = "android-arch-core" }
 lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime" }
-apollo = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
-apollo-mock = { module = "com.apollographql.mockserver:apollo-mockserver", version.ref = "apollo-mock"}
-apollo-test = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
 navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit-test = { module = "androidx.compose.ui:ui-test-junit4" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
@@ -79,9 +79,10 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 android = ["androidx-appcompat", "androidx-material", "androidx-constraintlayout", "androidx-activity-compose"]
 core = ["androidx-core-ktx", "core-common", "core-runtime", "core-testing", "lifecycle-runtime"]
 coroutines = ["coroutine-core", "coroutine-android", "coroutine-test"]
+lottie = ["lottie", "lottie-compose"]
 compose = ["androidx-activity-compose", "compose-ui", "compose-graphics", "compose-tooling", "compose-runtime-livedata", "androidx-material3"]
 androidtest = ["androidx-espresso-core", "junit-test"]
-test = ["junit", "mockk", "coroutine-test", "koin-test", "kotlin-test", "kotlin-test-junit", "apollo-mock", "apollo-test"]
+test = ["junit", "mockk", "coroutine-test", "koin-test", "kotlin-test", "kotlin-test-junit"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -91,11 +92,8 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # Plugins defined by this project
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 flashback-android-application = { id = "flashback.android.application", version = "unspecified" }
 flashback-android-application-compose = { id = "flashback.android.application.compose", version = "unspecified" }
 flashback-android-library = { id = "flashback.android.library", version = "unspecified" }
 flashback-android-library-compose = { id = "flashback.android.library.compose", version = "unspecified" }
-flashback-android-feature = { id = "flashback.android.feature", version = "unspecified" }
-flashback-android-hilt = { id = "flashback.android.hilt", version = "unspecified" }
 # End

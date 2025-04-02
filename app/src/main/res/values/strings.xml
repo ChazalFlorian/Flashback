@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flashback</string>
+    <string name="splash_screen_title">Splash</string>
+    <string name="signin_screen_title">SignIn</string>
+    <string name="library_screen_title">Library</string>
+    <string name="revive_screen_title">Revive</string>
 </resources>

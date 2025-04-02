@@ -2,6 +2,7 @@ import com.fchazal.flashback.build_logic.convention.implementation
 
 plugins {
     alias(libs.plugins.flashback.android.application)
+    // alias(libs.plugins.flashback.android.application.compose)
     alias(libs.plugins.kotlin.android)
 }
 
@@ -34,8 +35,12 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
+    implementation(libs.navigation)
     implementation(libs.bundles.compose)
+    implementation(libs.bundles.lottie)
+    implementation(libs.koin.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
