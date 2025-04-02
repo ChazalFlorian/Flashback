@@ -2,7 +2,7 @@ import com.fchazal.flashback.build_logic.convention.implementation
 
 plugins {
     alias(libs.plugins.flashback.android.application)
-    // alias(libs.plugins.flashback.android.application.compose)
+    alias(libs.plugins.flashback.android.application.compose)
     alias(libs.plugins.kotlin.android)
 }
 
