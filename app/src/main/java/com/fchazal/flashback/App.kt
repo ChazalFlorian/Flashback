@@ -8,7 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.fchazal.flashback.ui.SplashScreen
+import com.fchazal.core.ui.splash.SplashScreen
 
 @Composable
 fun App(
@@ -21,7 +21,11 @@ fun App(
             modifier = Modifier.fillMaxSize()
         ) {
             composable(route = FlashbackRoutes.Splash.name) {
-                SplashScreen(navController)
+                SplashScreen(
+                    navigateToApp = {
+                        navController.navigate(FlashbackRoutes.SignIn.name)
+                    }
+                )
             }
             composable(route = FlashbackRoutes.SignIn.name) {
 

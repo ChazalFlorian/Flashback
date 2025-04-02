@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.flashback.android.library)
+    alias(libs.plugins.flashback.android.library.compose)
 }
 
 android {
