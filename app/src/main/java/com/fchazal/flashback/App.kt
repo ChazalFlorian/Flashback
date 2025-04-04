@@ -3,8 +3,10 @@ package com.fchazal.flashback
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -19,6 +21,7 @@ import org.koin.java.KoinJavaComponent.inject
 fun App(
     navController: NavHostController = rememberNavController(),
 ) {
+    val coroutineScope = rememberCoroutineScope()
     MaterialTheme {
         NavHost(
             navController = navController,
@@ -34,9 +37,10 @@ fun App(
             }
             composable(route = FlashbackRoutes.SignIn.name) {
                 val viewModel: SignInViewModel by inject(SignInViewModel::class.java)
-                val state = remember { mutableStateOf(viewModel.uiState.value) }
+                val state = remember { mutableStateOf(viewModel.uiState) }
+
                 SignInScreen(
-                    state = state.value,
+                    state = state.value.collectAsState(),
                     onSignInClick = { email, password ->
                         viewModel.signIn(email, password)
                     }

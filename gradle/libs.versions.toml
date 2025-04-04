@@ -27,8 +27,10 @@ junitVersion = "4.13.2"
 androidxJunit = "1.2.1"
 jetbrainsKotlinJvm = "2.0.21"
 room = "2.7.0-rc03"
+coil = "3.1.0"
 
 [libraries]
+coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }

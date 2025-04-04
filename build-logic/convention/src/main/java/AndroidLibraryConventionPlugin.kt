@@ -1,5 +1,7 @@
 import com.android.build.gradle.LibraryExtension
 import com.fchazal.flashback.build_logic.convention.configureKotlinAndroid
+import com.fchazal.flashback.build_logic.convention.implementation
+import com.fchazal.flashback.build_logic.convention.libs
 import com.fchazal.flashback.build_logic.convention.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -21,6 +23,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+                implementation(libs.findBundle("coroutines").get())
                 testImplementation(kotlin("test"))
             }
         }

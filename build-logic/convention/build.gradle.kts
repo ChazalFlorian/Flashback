@@ -54,9 +54,5 @@ gradlePlugin {
             id = "flashback.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
-        register("androidFeature") {
-            id = "flashback.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
-        }
     }
 }

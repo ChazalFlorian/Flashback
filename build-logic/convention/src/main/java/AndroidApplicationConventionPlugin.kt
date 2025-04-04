@@ -1,8 +1,11 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.fchazal.flashback.build_logic.convention.configureKotlinAndroid
+import com.fchazal.flashback.build_logic.convention.implementation
+import com.fchazal.flashback.build_logic.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 class AndroidApplicationConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
@@ -21,6 +24,10 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                         excludes += "/META-INF/{AL2.0,LGPL2.1}"
                     }
                 }
+            }
+
+            dependencies {
+                implementation(libs.findBundle("coroutines").get())
             }
         }
     }

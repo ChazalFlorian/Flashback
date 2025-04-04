@@ -18,13 +18,14 @@ import kotlinx.coroutines.delay
 fun SplashScreen(
     navigateToApp: () -> Unit,
 ) {
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.illustration_splash_screen))
+    val composition by rememberLottieComposition(
+        LottieCompositionSpec.RawRes(R.raw.illustration_splash_screen)
+    )
     val progress by animateLottieCompositionAsState(composition)
 
     LaunchedEffect(key1 = true) {
         delay(3000L)
         navigateToApp()
-        //navController.navigate(FlashbackRoutes.SignIn.name)
     }
     LottieAnimation(
         modifier = Modifier.background(Color(0xFF25C9B9)),
@@ -36,7 +37,5 @@ fun SplashScreen(
 @Composable
 @Preview
 fun SplashScreenPreview() {
-    SplashScreen(
-        {}
-    )
+    SplashScreen(navigateToApp = {})
 }
