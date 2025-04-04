@@ -22,6 +22,7 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.room.gradlePlugin)
 }
 
 tasks {
@@ -48,6 +49,10 @@ gradlePlugin {
         register("androidLibrary") {
             id = "flashback.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidRoom") {
+            id = "flashback.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
         }
         register("androidFeature") {
             id = "flashback.android.feature"
